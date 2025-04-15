@@ -47,23 +47,23 @@
                 <!-- Product Images -->
                 <section class="w-full lg:w-1/2 max-w-[500px]">
                     <div class="border-2 border-dashed border-white w-full h-[400px] flex items-center justify-center">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/46e921e3c584fc59638120fe44716206cd1dc53a" 
+                        <img src="https://i.ibb.co/M5NpRjs2/image-9.png" 
                              alt="hachiroku moonlight keyboard" 
                              class="max-w-full max-h-full object-contain" />
                     </div>
                     <div class="flex gap-2 mt-3 sm:mt-6">
                         <div class="border-2 border-dashed border-white w-40 h-40 flex items-center justify-center">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a088106b02af8fd04a12b072b7e91098583013dc" 
+                            <img src="https://i.ibb.co/QjKc7B5H/image-9.png" 
                                  alt="hachiroku moonlight thumbnail 1" 
                                  class="max-w-full max-h-full object-contain" />
                         </div>
                         <div class="border-2 border-dashed border-white w-40 h-40 flex items-center justify-center">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e6ba273bfe52bbb47c3c9bfdeede81aa6e3ea4e8" 
+                            <img src="https://i.ibb.co/Z6fGSCJ9/image-10.png" 
                                  alt="hachiroku moonlight thumbnail 2" 
                                  class="max-w-full max-h-full object-contain" />
                         </div>
                         <div class="border-2 border-dashed border-white w-40 h-40 flex items-center justify-center">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ba06c20a5ca77ca48fcde6c036f08a76db80d6cf" 
+                            <img src="https://i.ibb.co/MxRVN8WL/image-11.png" 
                                  alt="hachiroku moonlight thumbnail 3" 
                                  class="max-w-full max-h-full object-contain" />
                         </div>
@@ -72,32 +72,28 @@
 
                 <!-- Product Details -->
                 <section class="w-full lg:w-1/2">
-                    <h1 class="font-rubik-semibold text-4xl sm:text-5xl md:text-6xl text-white/80">hachiroku moonlight</h1>
+                    <h1 class="font-rubik-semibold text-4xl sm:text-5xl md:text-6xl text-white/80">hachiroku space</h1>
                     
                     <div class="mt-6 sm:mt-8">
                         <h2 class="font-rubik-medium text-xl sm:text-2xl text-white/80">Описание:</h2>
                         <p class="font-rubik-light text-lg sm:text-xl text-white mt-2 leading-relaxed">
-                            Проводное подключение и уравновешенный комплект поставки позволили
-                            добиться комфортной цены на девайс, сохранив все важнейшие
-                            преимущества премиального устройства - невероятно приятный тайпинг,
-                            исключительную функциональность и абсолютную надежность.
+                        Флагманская клавиатура премиального уровня, в которой продумана каждая мелкая деталь, чтобы игровые сессии даже самых требовательных пользователей проходили с максимальным комфортом
                         </p>
                     </div>
                     
                     <div class="mt-8 sm:mt-10">
                         <h2 class="font-rubik-medium text-xl sm:text-2xl text-white/80">Характеристики:</h2>
                         <p class="font-rubik-light text-lg sm:text-xl text-white mt-2 leading-relaxed">
-                            Тип подключения: проводная<br />
-                            Формат: tkl<br />
-                            Размеры: 398х172х104мм<br />
+                            Тип подключения: беспроводная<br />
+                            Формат: 98%<br />
+                            Размеры: 392х141х44мм<br />
                             Вес: 850г<br />
                             Наличие Hot-Swap: да<br />
-                            Длина съемного кабеля: 1.8м
                         </p>
                     </div>
                     
                     <div class="mt-10 sm:mt-12 flex items-center gap-8 sm:gap-12">
-                        <div class="font-rubik-semibold text-4xl sm:text-5xl md:text-6xl text-white/80">9999 ₽</div>
+                        <div class="font-rubik-semibold text-4xl sm:text-5xl md:text-6xl text-white/80">8999 ₽</div>
                         <button class="bg-blue-600/20 text-white border-2 border-white rounded-md py-4 px-10 sm:py-5 sm:px-12 font-rubik-semibold text-xl hover:bg-blue-600/30 transition">
                             Добавить в корзину
                         </button>

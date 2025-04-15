@@ -47,23 +47,23 @@
                 <!-- Product Images -->
                 <section class="w-full lg:w-1/2 max-w-[500px]">
                     <div class="border-2 border-dashed border-white w-full h-[400px] flex items-center justify-center">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/46e921e3c584fc59638120fe44716206cd1dc53a" 
-                             alt="hachiroku moonlight keyboard" 
+                        <img src="https://i.ibb.co/qL0wWbdC/image-15.png" 
+                             alt="hachiroku superone mice" 
                              class="max-w-full max-h-full object-contain" />
                     </div>
                     <div class="flex gap-2 mt-3 sm:mt-6">
                         <div class="border-2 border-dashed border-white w-40 h-40 flex items-center justify-center">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a088106b02af8fd04a12b072b7e91098583013dc" 
+                            <img src="https://i.ibb.co/qL0wWbdC/image-15.png" 
                                  alt="hachiroku moonlight thumbnail 1" 
                                  class="max-w-full max-h-full object-contain" />
                         </div>
                         <div class="border-2 border-dashed border-white w-40 h-40 flex items-center justify-center">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e6ba273bfe52bbb47c3c9bfdeede81aa6e3ea4e8" 
+                            <img src="https://i.ibb.co/zW93C0kX/image-17.png" 
                                  alt="hachiroku moonlight thumbnail 2" 
                                  class="max-w-full max-h-full object-contain" />
                         </div>
                         <div class="border-2 border-dashed border-white w-40 h-40 flex items-center justify-center">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ba06c20a5ca77ca48fcde6c036f08a76db80d6cf" 
+                            <img src="https://i.ibb.co/qL0wWbdC/image-15.png" 
                                  alt="hachiroku moonlight thumbnail 3" 
                                  class="max-w-full max-h-full object-contain" />
                         </div>
@@ -72,27 +72,22 @@
 
                 <!-- Product Details -->
                 <section class="w-full lg:w-1/2">
-                    <h1 class="font-rubik-semibold text-4xl sm:text-5xl md:text-6xl text-white/80">hachiroku moonlight</h1>
+                    <h1 class="font-rubik-semibold text-4xl sm:text-5xl md:text-6xl text-white/80">hachiroku one</h1>
                     
                     <div class="mt-6 sm:mt-8">
                         <h2 class="font-rubik-medium text-xl sm:text-2xl text-white/80">Описание:</h2>
                         <p class="font-rubik-light text-lg sm:text-xl text-white mt-2 leading-relaxed">
-                            Проводное подключение и уравновешенный комплект поставки позволили
-                            добиться комфортной цены на девайс, сохранив все важнейшие
-                            преимущества премиального устройства - невероятно приятный тайпинг,
-                            исключительную функциональность и абсолютную надежность.
+                        топовая игровая мышь, которая адаптируется под тебя. поддерживает hot-swap и позволяет с легкостью менять микро-переключатели, подбирая самый комфортной клик. Больше не нужно идти на компромиссы.
                         </p>
                     </div>
                     
                     <div class="mt-8 sm:mt-10">
                         <h2 class="font-rubik-medium text-xl sm:text-2xl text-white/80">Характеристики:</h2>
                         <p class="font-rubik-light text-lg sm:text-xl text-white mt-2 leading-relaxed">
-                            Тип подключения: проводная<br />
-                            Формат: tkl<br />
-                            Размеры: 398х172х104мм<br />
-                            Вес: 850г<br />
-                            Наличие Hot-Swap: да<br />
-                            Длина съемного кабеля: 1.8м
+                            Вес: 57г<br />
+                            Частота опроса: 125-1000 Гц<br />
+                            Время работы: 40 часов при 1000гц<br />
+                            
                         </p>
                     </div>
                     

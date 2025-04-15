@@ -31,4 +31,19 @@ Route::get('/qweqwe', function () {
 Route::get('/moonlight', function () {
     return view('moonlight');
 });
+Route::get('/space', function () {
+    return view('space');
+});
+Route::get('/superone', function () {
+    return view('superone');
+});
+Route::get('/one', function () {
+    return view('one');
+});
+Route::get('/mousepad-blue', function () {
+    return view('mousepad-blue');
+});
+Route::get('/myindex', function () {
+    return view('myindex');
+});
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
