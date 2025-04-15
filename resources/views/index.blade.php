@@ -28,12 +28,24 @@
                     <ul class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-11 text-lg sm:text-xl md:text-2xl text-white">
                         <li><a href="{{ url('/catalog') }}" class="font-rubik-light hover:opacity-80 transition">каталог</a></li>
                         <li><a href="{{ url('/support') }}" class="font-rubik-light hover:opacity-80 transition">поддержка</a></li>
-                        <li><a href="{{ url('/cart') }}" class="font-rubik-light hover:opacity-80 transition">корзина</a></li>
+                        <li><a href="{{ url('/profile') }}" class="font-rubik-light hover:opacity-80 transition">профиль</a></li>
+                        @auth
+                        <li><form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="font-rubik-light hover:opacity-80 transition hover:text-red-600">Выйти</button>
+                            </form>
+                        </li>
+                        @else
+                        <li>
+                        <a href="{{ route('login') }}" class="font-rubik-light hover:opacity-80 transition">Вход</a>
+                        </li>
+                        <li>
+                        <a href="{{ route('register') }}" class="font-rubik-light hover:opacity-80 transition">Регистрация</a>
+
+                        </li>
+                        @endauth
                     </ul>
-                    <div class="text-lg sm:text-xl md:text-2xl text-white">
-                        <a href="login" class="font-rubik-light hover:opacity-80 transition">вход</a> |
-                        <a href="register" class="font-rubik-light hover:opacity-80 transition">регистрация</a>
-                    </div>
+                    
                 </div>
             </nav>
 

@@ -21,10 +21,7 @@ class User extends Authenticatable
     ];
 
     // Связь с корзиной пользователя
-    public function cartItems(): HasMany
-    {
-        return $this->hasMany(Cart::class);
-    }
+    
 
     // Связь с заказами пользователя
     public function orders(): HasMany

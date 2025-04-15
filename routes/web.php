@@ -1,34 +1,65 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CheckoutController;
 
-use App\Models\Product; // Убедитесь, что модель Product импортирована
-
-
+use Illuminate\Support\Facades\Route;
 
 Route::get('/index', function () {
     return view('index');
 });
-Route::get('/2index', function () {
-    return view('2index');
-});
 Route::get('/catalog', function () {
     return view('catalog');
 });
-Route::get('/cart', function () {
-    return view('cart');
-});Route::get('/profile', function () {
+Route::get('/profile', function () {
     return view('profile');
 });
 Route::get('/support', function () {
     return view('support');
 });
-Route::get('/qweqwe', function () {
-    return view('qweqwe');
-});
 Route::get('/moonlight', function () {
     return view('moonlight');
 });
-Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
+Route::get('/space', function () {
+    return view('space');
+});
+Route::get('/one', function () {
+    return view('one');
+});
+Route::get('/superone', function () {
+    return view('superone');
+});
+Route::get('/mousepad-blue', function () {
+    return view('mousepad-blue');
+});
+Route::get('/mousepad-red', function () {
+    return view('mousepad-red');
+});
+Route::get('/night', function () {
+    return view('night');
+});
+Route::get('/loud', function () {
+    return view('loud');
+});
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+
+
+
+use App\Http\Controllers\Auth\LogoutController;
+
+Route::post('/logout', LogoutController::class)->name('logout');
