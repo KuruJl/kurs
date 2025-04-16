@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hachiroku one - Мышь</title>
 
+    <title>hachiroku - moonlight</title>
     <link href="{{ asset('resources/css/fonts.css') }}" rel="stylesheet">
     @vite('resources/css/app.css')
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -197,6 +198,11 @@
                 </div>
             </div>
         </footer>
+<<<<<<< HEAD
 
     </div> </body>
+=======
+    </div>
+</body>
+>>>>>>> 0fccce1dc22451c3829068f90ca4093353806a0f
 </html>

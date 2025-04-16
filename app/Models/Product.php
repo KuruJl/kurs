@@ -17,11 +17,7 @@
             'slug',
         ];
 
-        public function cartItems(): HasMany
-        {
-            return $this->hasMany(CartItem::class); // Исправлено
-        }
-
+        
         public function orders()
         {
             return $this->belongsToMany(Order::class, 'order_items')

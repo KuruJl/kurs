@@ -42,9 +42,13 @@ Route::get('/night', function () {
 Route::get('/loud', function () {
     return view('loud');
 });
-Route::get('/cart', function () {
-    return view('cart');
-});
+Route::post('/cart/add/{product}', [CartController::class, 'addToCart'])->name('cart.add');
+
+// Маршруты корзины
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('/cart/add/{product}', [CartController::class, 'addToCart'])->name('cart.add');
+Route::patch('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
+Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -58,8 +62,5 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
-
 use App\Http\Controllers\Auth\LogoutController;
-
 Route::post('/logout', LogoutController::class)->name('logout');
