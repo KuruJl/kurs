@@ -13,6 +13,57 @@
         .font-rubik-regular { font-family: 'Rubik', sans-serif; font-weight: 400; }
         .font-rubik-medium { font-family: 'Rubik', sans-serif; font-weight: 500; }
         .font-rubik-semibold { font-family: 'Rubik', sans-serif; font-weight: 600; }
+
+        #search-bar-component {
+    position: relative;
+}
+#search-bar-component input#search-bar {
+    display: block;
+    position: absolute;
+    right: 0;
+    cursor: text;
+    height: 2rem;
+    color: #4e6e8e;
+    border: 1px solid #cfd4db;
+    border-radius: 2rem;
+    font-size: .9rem;
+    line-height: 2rem;
+    padding: 0 1rem;
+    outline: 0;
+    background-size: auto;
+    background-size: 1rem;
+    transition: all .2s ease;
+}
+#search-bar-component #dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    border-radius: 1rem;
+    text-align: left;
+    min-width: 400px;
+    background: #fff;
+    border: 1px solid #cfd4db;
+    transition: all .2s ease;
+}
+#search-bar-component #dropdown-menu .result-link {
+    display: block;
+    padding: .750rem 1rem;
+    font-size: .875rem;
+    
+}
+#search-bar-component #dropdown-menu .result-link:hover,
+#search-bar-component #dropdown-menu .result-link:active {
+    background-color: #f1f2f4;
+}
+#search-bar-component #dropdown-menu .result-header,
+#search-bar-component #dropdown-menu .result-empty {
+    padding: 1rem;
+    width: 100%;
+}
+#search-bar-component #dropdown-menu .result-header {
+    border-bottom: 1px solid #cfd4db;
+}   
     </style>
 </head>
 
@@ -28,6 +79,7 @@
                     <ul class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-11 text-lg sm:text-xl md:text-2xl text-white">
                         <li><a href="{{ url('/catalog') }}" class="font-rubik-light hover:opacity-80 transition">каталог</a></li>
                         <li><a href="{{ url('/support') }}" class="font-rubik-light hover:opacity-80 transition">поддержка</a></li>
+                        <li><a href="{{ url('/cart') }}" class="font-rubik-light hover:opacity-80 transition">корзина</a></li>
                         <li><a href="{{ url('/profile') }}" class="font-rubik-light hover:opacity-80 transition">профиль</a></li>
                         @auth
                         <li><form method="POST" action="{{ route('logout') }}">

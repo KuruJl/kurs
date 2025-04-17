@@ -53,6 +53,8 @@
         <ul class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-11 text-lg sm:text-xl md:text-2xl text-white">
                         <li><a href="{{ url('/catalog') }}" class="font-rubik-light hover:opacity-80 transition">каталог</a></li>
                         <li><a href="{{ url('/support') }}" class="font-rubik-light hover:opacity-80 transition">поддержка</a></li>
+                        <li><a href="{{ url('/cart') }}" class="font-rubik-light hover:opacity-80 transition">корзина</a></li>
+
                         <li><a href="{{ url('/profile') }}" class="font-rubik-light hover:opacity-80 transition">профиль</a></li>
                         @auth
                         <li><form method="POST" action="{{ route('logout') }}">
@@ -109,7 +111,7 @@
 
                 <form class="mt-10 sm:mt-12">
                     <div class="flex flex-wrap items-center gap-6 sm:gap-8">
-                        <div class="font-rubik-semibold text-4xl sm:text-5xl text-white">9999 ₽</div>
+                        <div class="font-rubik-semibold text-4xl sm:text-5xl text-white">6990 ₽</div>
 
                          <div class="flex items-center">
                             <label for="quantity" class="font-rubik-light text-white/80 mr-2 whitespace-nowrap">Количество:</label>
