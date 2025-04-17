@@ -15,6 +15,6 @@ class LogoutController extends Controller
         $request->session()->invalidate(); // Очищаем сессию
         $request->session()->regenerateToken(); // Генерируем новый CSRF-токен
         
-        return redirect('/index'); // Редирект на главную
+        return redirect('/'); // Редирект на главную
     }
 }

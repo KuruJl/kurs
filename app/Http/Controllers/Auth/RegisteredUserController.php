@@ -49,7 +49,7 @@ class RegisteredUserController extends Controller
     Auth::login($user);
 
     // Изменяем редирект с /dashboard на главную /
-    return redirect('index');
+    return redirect('/');
 }
    
 

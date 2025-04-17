@@ -18,9 +18,17 @@ Route::get('/profile', function () {
 Route::get('/support', function () {
     return view('support');
 });
+
 Route::get('/moonlight', function () {
-    return view('moonlight');
+    // Здесь вам нужно каким-то образом получить данные о товаре "moonlight"
+    // из вашей базы данных. Предположим, что ID товара "moonlight" равен 1.
+    $productId = 4; // Замените на фактический ID товара "moonlight" в вашей БД
+    $product = \App\Models\Product::find($productId);
+
+    // Теперь мы передаем объект $product в представление
+    return view('moonlight', ['product' => $product]);
 });
+
 Route::get('/space', function () {
     return view('space');
 });
@@ -42,7 +50,6 @@ Route::get('/night', function () {
 Route::get('/loud', function () {
     return view('loud');
 });
-Route::post('/cart/add/{product}', [CartController::class, 'addToCart'])->name('cart.add');
 
 // Маршруты корзины
 Route::get('/cart', [CartController::class, 'index'])->name('cart');

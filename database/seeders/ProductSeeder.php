@@ -21,17 +21,6 @@ class ProductSeeder extends Seeder
         if ($mouseCategory) {
             Product::create([
                 'category_id' => $mouseCategory->id,
-                'name' => 'Hachiroku one',
-                'slug' => 'hachiroku-one', // Сделайте slug уникальным для продукта
-                'description' => 'Топовая игровая мышь, которая адаптируется под тебя. поддерживает hot-swap и позволяет с легкостью менять микро-переключатели, подбирая самый комфортной клик. Больше не нужно идти на компромиссы.',
-                'price' => 6990,
-                'image' => 'images/hachiroku-space.jpg', // Обновите путь к изображению
-                'in_stock' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
-            Product::create([
-                'category_id' => $mouseCategory->id,
                 'name' => 'Hachiroku superone',
                 'slug' => 'hachiroku-superone', // Сделайте slug уникальным для продукта
                 'description' => 'Время работы от одного заряда - 130 часов (объём аккумулятора 500 mAh). Чип Nordic 52840 с поддержкой частоты опроса до 4000 Гц (требует специального ресивера, который можно приобрести отдельно)',
@@ -41,6 +30,18 @@ class ProductSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
+            Product::create([
+                'category_id' => $mouseCategory->id,
+                'name' => 'Hachiroku one',
+                'slug' => 'hachiroku-one', // Сделайте slug уникальным для продукта
+                'description' => 'Топовая игровая мышь, которая адаптируется под тебя. поддерживает hot-swap и позволяет с легкостью менять микро-переключатели, подбирая самый комфортной клик. Больше не нужно идти на компромиссы.',
+                'price' => 6990,
+                'image' => 'images/hachiroku-space.jpg', // Обновите путь к изображению
+                'in_stock' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            
         } else {
             $this->command->warn('Категория "mice" не найдена. Убедитесь, что CategorySeeder запущен.');
         }       
@@ -73,7 +74,38 @@ class ProductSeeder extends Seeder
             ]);
         } else {
             $this->command->warn('Категория "keyboards" не найдена. Убедитесь, что CategorySeeder запущен.');
-        }       
+        }      
+        
+
+        $headphoneCategory = Category::where('slug', 'headphones')->first();
+
+        if ($headphoneCategory) {
+            Product::create([
+                'category_id' => $headphoneCategory->id,
+                'name' => 'Hachiroku night',
+                'slug' => 'hachiroku-night', // Сделайте slug уникальным для продукта
+                'description' => 'Складной микрофон с увеличенным звукоснимающим капсюлем и расширенным частотным диапазоном. Проводное подключение гарантирует полную совместимость микрофона с любыми устройствами',
+                'price' => 7499,
+                'image' => 'images/hachiroku-space.jpg', // Обновите путь к изображению
+                'characteristics' => ''
+                'in_stock' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            Product::create([
+                'category_id' => $headphoneCategory->id,
+                'name' => 'Hachiroku loud',
+                'slug' => 'hachiroku-loud', // Сделайте slug уникальным для продукта
+                'description' => 'Беспроводная гарнитура премиум-класса с высокой точностью звука в средних и высоких частотах, Съемный микрофон с увеличенным звукоснимающим капсюлем и расширенным частотным диапазоном.',
+                'price' => 8999,
+                'image' => 'images/hachiroku-space.jpg', // Обновите путь к изображению
+                'in_stock' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        } else {
+            $this->command->warn('Категория "keyboards" не найдена. Убедитесь, что CategorySeeder запущен.');
+        }      
      
     }
         

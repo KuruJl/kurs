@@ -29,7 +29,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
     
         // Изменяем редирект с /dashboard на главную /
-        return redirect()->intended('/index');
+        return redirect()->intended('/');
     }
 
     /**

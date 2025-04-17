@@ -9,7 +9,7 @@ class CartController extends Controller
 {
     public function addToCart(Request $request, Product $product)
     {
-        dd($request->all(), $product);
+       // dd($request->all(), $product);
         $quantity = $request->input('quantity', 1); // Получаем количество из запроса, по умолчанию 1
         $cart = session()->get('cart', []); // Получаем корзину из сессии или создаем новую
 

@@ -48,7 +48,7 @@
     <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
 
         <header class="flex flex-wrap justify-between items-center gap-4 mb-8 sm:mb-12">
-        <a  href="{{ url(path: '/index') }}" class="font-norwester text-4xl sm:text-5xl md:text-6xl text-pink-200">hachiroku</a>
+        <a  href="{{ url(path: '/') }}" class="font-norwester text-4xl sm:text-5xl md:text-6xl text-pink-200">hachiroku</a>
         <nav class="flex items-center gap-4 sm:gap-6 md:gap-11">
         <ul class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-11 text-lg sm:text-xl md:text-2xl text-white">
                         <li><a href="{{ url('/catalog') }}" class="font-rubik-light hover:opacity-80 transition">каталог</a></li>

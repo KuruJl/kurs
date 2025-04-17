@@ -15,7 +15,7 @@
 <div class="flex flex-col items-center w-full min-h-screen">
     <div class="flex flex-col gap-8 py-14 w-full px-4 sm:px-6 lg:px-8 max-w-[1320px]">
         <nav class="flex flex-col sm:flex-row justify-between items-center gap-5 sm:gap-0 mb-10">
-            <a href="{{ url(path: '/index') }}" class="font-norwester text-4xl sm:text-5xl md:text-6xl text-pink-200">hachiroku</a>
+            <a href="{{ url(path: '/') }}" class="font-norwester text-4xl sm:text-5xl md:text-6xl text-pink-200">hachiroku</a>
             <div class="flex flex-col sm:flex-row gap-4 sm:gap-11 items-center">
                 <ul class="flex flex-col sm:flex-row gap-4 sm:gap-11 items-center text-lg md:text-xl lg:text-2xl text-white">
                     <li><a href="{{ url('/catalog') }}" class="font-rubik-light hover:opacity-80 transition">каталог</a></li>
