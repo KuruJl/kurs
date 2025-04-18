@@ -106,12 +106,19 @@
                         </p>
                     </div>
                     
-                    <div class="mt-10 sm:mt-12 flex items-center gap-8 sm:gap-12">
-                        <div class="font-rubik-semibold text-4xl sm:text-5xl md:text-6xl text-white/80">8999 ₽</div>
-                        <button class="bg-blue-600/20 text-white border-2 border-white rounded-md py-4 px-10 sm:py-5 sm:px-12 font-rubik-semibold text-xl hover:bg-blue-600/30 transition">
-                            Добавить в корзину
-                        </button>
-                    </div>
+                    <form action="{{ route('cart.add', ['product' => $product->id ?? 1]) }}" method="POST" class="mt-10 sm:mt-12">
+                @csrf
+                            <div class="flex flex-wrap items-center gap-6 sm:gap-8">
+                                <div class="font-rubik-semibold text-4xl sm:text-5xl text-white">9999 ₽</div>
+                                <div class="flex items-center">
+                                    <label for="quantity" class="font-rubik-light text-white/80 mr-2 whitespace-nowrap">Количество:</label>
+                                    <input type="number" id="quantity" name="quantity" value="1" min="1" aria-label="Количество товара" class="bg-white/10 border border-white/30 text-white p-2 rounded-md w-16 text-center">
+                                </div>
+                                <button type="submit" class="bg-blue-600/20 text-white border-2 border-white rounded-md py-3 px-8 sm:py-4 sm:px-10 font-rubik-semibold text-lg sm:text-xl hover:bg-blue-600/30 transition whitespace-nowrap">
+                                    Добавить в корзину
+                                </button>
+                            </div>
+                        </form>
                 </section>
             </section>
         </main>

@@ -25,7 +25,7 @@ class ProductSeeder extends Seeder
                 'slug' => 'hachiroku-superone', // Сделайте slug уникальным для продукта
                 'description' => 'Время работы от одного заряда - 130 часов (объём аккумулятора 500 mAh). Чип Nordic 52840 с поддержкой частоты опроса до 4000 Гц (требует специального ресивера, который можно приобрести отдельно)',
                 'price' => 7499,
-                'image' => 'images/hachiroku-space.jpg', // Обновите путь к изображению
+                'image' => 'https://i.ibb.co/M5NpRjs2/image-9.png', // Обновите путь к изображению
                 'in_stock' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -63,11 +63,11 @@ class ProductSeeder extends Seeder
             ]);
             Product::create([
                 'category_id' => $keyboardCategory->id,
-                'name' => 'Hachiroku moonlight',
+                'name' => 'hachiroku moonlight',
                 'slug' => 'hachiroku-moonlight', // Сделайте slug уникальным для продукта
                 'description' => 'Проводное подключение и уравновешенный комплект поставки позволили добиться комфортной цены на девайс, сохранив все важнейшие преимущества премиального устройства - невероятно приятный тайпинг, исключительную функциональность и абсолютную надежность.',
                 'price' => 9999,
-                'image' => 'images/hachiroku-space.jpg', // Обновите путь к изображению
+                'image' => 'https://i.ibb.co/qL0wWbdC/image-15.png', // Обновите путь к изображению
                 'in_stock' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -87,7 +87,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Складной микрофон с увеличенным звукоснимающим капсюлем и расширенным частотным диапазоном. Проводное подключение гарантирует полную совместимость микрофона с любыми устройствами',
                 'price' => 7499,
                 'image' => 'images/hachiroku-space.jpg', // Обновите путь к изображению
-                'characteristics' => ''
+                
                 'in_stock' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -106,6 +106,35 @@ class ProductSeeder extends Seeder
         } else {
             $this->command->warn('Категория "keyboards" не найдена. Убедитесь, что CategorySeeder запущен.');
         }      
+
+        $carpetCategory = Category::where('slug', 'carpets')->first();
+
+        if ($headphoneCategory) {
+            Product::create([
+                'category_id' => $carpetCategory->id,
+                'name' => 'Hachiroku mousepad-red',
+                'slug' => 'hachiroku-mousepad-red', // Сделайте slug уникальным для продукта
+                'description' => 'Тканевый коврик outlines выполнен из высококачественного полиэстера толщиной 4 мм. Плотное плетение нитей с мелкой фактурой гарантирует оптимальное сочетание скорости и контроля. Коврик уверенно фиксируется на столе благодаря цепкому прорезиненному основанию.',
+                'price' => 2499,
+                'image' => 'images/hachiroku-space.jpg', // Обновите путь к изображению
+                'in_stock' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            Product::create([
+                'category_id' => $carpetCategory->id,
+                'name' => 'Hachiroku mousepad-blue',
+                'slug' => 'hachiroku-mousepad-blue', // Сделайте slug уникальным для продукта
+                'description' => 'Тканевый коврик outlines выполнен из высококачественного полиэстера толщиной 4 мм. Плотное плетение нитей с мелкой фактурой гарантирует оптимальное сочетание скорости и контроля. Коврик уверенно фиксируется на столе благодаря цепкому прорезиненному основанию.',
+                'price' => 2499,
+                'image' => 'images/hachiroku-space.jpg', // Обновите путь к изображению
+                'in_stock' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        } else {
+            $this->command->warn('Категория "keyboards" не найдена. Убедитесь, что CategorySeeder запущен.');
+        }     
      
     }
         

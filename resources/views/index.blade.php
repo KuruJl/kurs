@@ -13,57 +13,6 @@
         .font-rubik-regular { font-family: 'Rubik', sans-serif; font-weight: 400; }
         .font-rubik-medium { font-family: 'Rubik', sans-serif; font-weight: 500; }
         .font-rubik-semibold { font-family: 'Rubik', sans-serif; font-weight: 600; }
-
-        #search-bar-component {
-    position: relative;
-}
-#search-bar-component input#search-bar {
-    display: block;
-    position: absolute;
-    right: 0;
-    cursor: text;
-    height: 2rem;
-    color: #4e6e8e;
-    border: 1px solid #cfd4db;
-    border-radius: 2rem;
-    font-size: .9rem;
-    line-height: 2rem;
-    padding: 0 1rem;
-    outline: 0;
-    background-size: auto;
-    background-size: 1rem;
-    transition: all .2s ease;
-}
-#search-bar-component #dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 2rem;
-    right: 0;
-    border-radius: 1rem;
-    text-align: left;
-    min-width: 400px;
-    background: #fff;
-    border: 1px solid #cfd4db;
-    transition: all .2s ease;
-}
-#search-bar-component #dropdown-menu .result-link {
-    display: block;
-    padding: .750rem 1rem;
-    font-size: .875rem;
-    
-}
-#search-bar-component #dropdown-menu .result-link:hover,
-#search-bar-component #dropdown-menu .result-link:active {
-    background-color: #f1f2f4;
-}
-#search-bar-component #dropdown-menu .result-header,
-#search-bar-component #dropdown-menu .result-empty {
-    padding: 1rem;
-    width: 100%;
-}
-#search-bar-component #dropdown-menu .result-header {
-    border-bottom: 1px solid #cfd4db;
-}   
     </style>
 </head>
 
@@ -136,7 +85,7 @@
                     </a>
 
                     <!-- Карточка 3 -->
-                    <a href="{{ url('/mousepad') }}" class="flex flex-col items-center p-6 sm:pt-12 border-2 bg-blue-600/20 hover:bg-blue-600/30 transition rounded-xl border-white/50 h-full">
+                    <a href="{{ url('/mousepad-red') }}" class="flex flex-col items-center p-6 sm:pt-12 border-2 bg-blue-600/20 hover:bg-blue-600/30 transition rounded-xl border-white/50 h-full">
                         <h3 class="font-rubik-semibold mb-4 sm:mb-5 text-xl sm:text-2xl text-white/80 text-center">hachiroku mousepad</h3>
                         <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/adfef0b946752e9845baf27dced3cf0a079a4c7e" 
                              alt="hachiroku mousepad product" 

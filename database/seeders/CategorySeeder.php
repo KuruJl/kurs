@@ -18,7 +18,7 @@ class CategorySeeder extends Seeder
             ['name' => 'keyboards'],
             ['name' => 'mice'],
             ['name' => 'headphones'],
-            ['name' => 'carpetsphp artisan migrate:fresh --seed'],
+            ['name' => 'carpets'],
         ];
 
         foreach ($categories as $categoryData) {

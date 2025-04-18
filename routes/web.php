@@ -20,8 +20,6 @@ Route::get('/support', function () {
 });
 
 Route::get('/moonlight', function () {
-    // Здесь вам нужно каким-то образом получить данные о товаре "moonlight"
-    // из вашей базы данных. Предположим, что ID товара "moonlight" равен 1.
     $productId = 4; // Замените на фактический ID товара "moonlight" в вашей БД
     $product = \App\Models\Product::find($productId);
 
@@ -30,25 +28,39 @@ Route::get('/moonlight', function () {
 });
 
 Route::get('/space', function () {
-    return view('space');
+    $productId = 3; // Замените на фактический ID товара "moonlight" в вашей БД
+    $product = \App\Models\Product::find($productId);
+    return view('space', ['product' => $product]);
 });
 Route::get('/one', function () {
-    return view('one');
+    $productId = 2; // Замените на фактический ID товара "moonlight" в вашей БД
+    $product = \App\Models\Product::find($productId);
+    return view('one', ['product' => $product]);
 });
 Route::get('/superone', function () {
-    return view('superone');
+    $productId = 1; // Замените на фактический ID товара "moonlight" в вашей БД
+    $product = \App\Models\Product::find($productId);
+    return view('superone', ['product' => $product]);
 });
 Route::get('/mousepad-blue', function () {
-    return view('mousepad-blue');
+    $productId = 8; // Замените на фактический ID товара "moonlight" в вашей БД
+    $product = \App\Models\Product::find($productId);
+    return view('mousepad-blue', ['product' => $product]);
 });
 Route::get('/mousepad-red', function () {
-    return view('mousepad-red');
+    $productId = 7; // Замените на фактический ID товара "moonlight" в вашей БД
+    $product = \App\Models\Product::find($productId);
+    return view('mousepad-red', ['product' => $product]);
 });
 Route::get('/night', function () {
-    return view('night');
+    $productId = 5; // Замените на фактический ID товара "moonlight" в вашей БД
+    $product = \App\Models\Product::find($productId);
+    return view('night', ['product' => $product]);
 });
 Route::get('/loud', function () {
-    return view('loud');
+    $productId = 6; // Замените на фактический ID товара "moonlight" в вашей БД
+    $product = \App\Models\Product::find($productId);
+    return view('loud', ['product' => $product]);
 });
 
 // Маршруты корзины
