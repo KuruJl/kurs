@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\SearchController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,7 @@ Route::get('/profile', function () {
 Route::get('/support', function () {
     return view('support');
 });
+Route::get('/search', [SearchController::class, 'index'])->name('search');
 
 Route::get('/moonlight', function () {
     $productId = 4; // Замените на фактический ID товара "moonlight" в вашей БД
