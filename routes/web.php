@@ -13,8 +13,8 @@ Route::get('/   ', function () {
 Route::get('/catalog', function () {
     return view('catalog');
 });
-Route::get('/profile', function () {
-    return view('profile');
+Route::get('/profilee', function () {
+    return view('profilee');
 });
 Route::get('/support', function () {
     return view('support');

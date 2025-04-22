@@ -119,7 +119,8 @@
                                     Добавить в корзину
                                 </button>
                             </div>
-                        </form> </section>
+                        </form> 
+            </section>
         </main>
 
         <section class="mt-16 sm:mt-24">

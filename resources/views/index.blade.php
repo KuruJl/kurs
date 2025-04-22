@@ -29,7 +29,7 @@
                         <li><a href="{{ url('/catalog') }}" class="font-rubik-light hover:opacity-80 transition">каталог</a></li>
                         <li><a href="{{ url('/support') }}" class="font-rubik-light hover:opacity-80 transition">поддержка</a></li>
                         <li><a href="{{ url('/cart') }}" class="font-rubik-light hover:opacity-80 transition">корзина</a></li>
-                        <li><a href="{{ url('/profile') }}" class="font-rubik-light hover:opacity-80 transition">профиль</a></li>
+                        <li><a href="{{ url('/profilee') }}" class="font-rubik-light hover:opacity-80 transition">профиль</a></li>
                         @auth
                         <li><form method="POST" action="{{ route('logout') }}">
                                 @csrf
