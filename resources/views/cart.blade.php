@@ -82,7 +82,7 @@
                 <div class="flex justify-end w-full mt-12">
                     <div class="flex flex-col items-end gap-4">
                         <div style="font-family:Rubik, serif; font-weight:600" class="text-3xl text-white">
-                            Итого: {{ number_format(array_sum(array_column($cart, 'price')) + array_sum(array_column($cart, 'quantity')), 0, '.', ' ') }} ₽
+                                                    Итого: {{ number_format(array_sum(array_map(function($item) { return $item['price'] * $item['quantity']; }, $cart)), 0, '.', ' ') }} ₽
                         </div>
                         <a href="#" class="w-full sm:w-[400px] h-20 text-xl sm:text-2xl lg:text-3xl font-bold rounded-md border-2 border-white cursor-pointer bg-blue-600 bg-opacity-20 text-white flex items-center justify-center hover:bg-opacity-30 transition">
                             Оформить заказ
