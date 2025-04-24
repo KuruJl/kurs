@@ -125,18 +125,21 @@
 
         <section class="mt-16 sm:mt-24">
             <h2 class="font-rubik-medium text-3xl sm:text-4xl text-pink-200">ТАКЖЕ ПОКУПАЮТ</h2>
-             <div class="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div class="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
 
-                 <div class="border border-white/30 bg-blue-600/10 rounded-xl overflow-hidden group flex flex-col text-center hover:bg-blue-600/20 transition duration-300 aspect-[1/1]"> <div class="p-4 sm:p-6 flex-grow flex flex-col justify-center">
+                 <a href="{{ url('/loud') }}" class="border border-white/30 bg-blue-600/10 rounded-xl overflow-hidden group flex flex-col text-center hover:bg-blue-600/20 transition duration-300 aspect-[1/1]">
+                    <div class="p-4 sm:p-6 flex-grow flex flex-col justify-center">
                          <h3 class="font-rubik-semibold text-xl sm:text-2xl text-white/90 mb-2">hachiroku loud</h3>
-                         <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e247a6c7b458889788d38d6139046c37bcc51787" alt="Клавиатура hachiroku loud" class="max-w-[80%] max-h-[120px] object-contain mx-auto my-2 group-hover:scale-105 transition duration-300" /> </div>
+                         <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e247a6c7b458889788d38d6139046c37bcc51787" alt="Клавиатура hachiroku loud" class="max-w-[80%] max-h-[120px] object-contain mx-auto my-2 group-hover:scale-105 transition duration-300" />
+                    </div>
                     <div class="mt-auto p-4 pt-0">
                          <p class="font-rubik-semibold text-xl md:text-2xl rounded-full bg-white/80 text-black/80 py-2 px-4 inline-block">
-                            8999 ₽ </p>
+                            8999 ₽
+                         </p>
                     </div>
-                </div>
+                </a>
 
-                 <div class="border border-white/30 bg-blue-600/10 rounded-xl overflow-hidden group flex flex-col text-center hover:bg-blue-600/20 transition duration-300 aspect-[1/1]">
+                 <a href="{{ url('/night') }}" class="border border-white/30 bg-blue-600/10 rounded-xl overflow-hidden group flex flex-col text-center hover:bg-blue-600/20 transition duration-300 aspect-[1/1]">
                     <div class="p-4 sm:p-6 flex-grow flex flex-col justify-center">
                          <h3 class="font-rubik-semibold text-xl sm:text-2xl text-white/90 mb-2">hachiroku night</h3>
                          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5911c5f235980b5f45d6a1fdedac84f3ae49016c" alt="Клавиатура hachiroku night" class="max-w-[80%] max-h-[120px] object-contain mx-auto my-2 group-hover:scale-105 transition duration-300" />
@@ -146,9 +149,9 @@
                             6990 ₽
                          </p>
                     </div>
-                </div>
+                </a>
 
-                <div class="border border-white/30 bg-blue-600/10 rounded-xl overflow-hidden group flex flex-col text-center hover:bg-blue-600/20 transition duration-300 aspect-[1/1]">
+                <a href="{{ url('/superone') }}" class="border border-white/30 bg-blue-600/10 rounded-xl overflow-hidden group flex flex-col text-center hover:bg-blue-600/20 transition duration-300 aspect-[1/1]">
                     <div class="p-4 sm:p-6 flex-grow flex flex-col justify-center">
                          <h3 class="font-rubik-semibold text-xl sm:text-2xl text-white/90 mb-2">hachiroku superone</h3>
                          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f1e30e2cc847e352df3581a299ba5dc39b996f14" alt="Клавиатура hachiroku superone" class="max-w-[80%] max-h-[120px] object-contain mx-auto my-2 group-hover:scale-105 transition duration-300" />
@@ -158,9 +161,9 @@
                             7499 ₽
                          </p>
                     </div>
-                </div>
+                </a>
 
-                 <div class="border border-white/30 bg-blue-600/10 rounded-xl overflow-hidden group flex flex-col text-center hover:bg-blue-600/20 transition duration-300 aspect-[1/1]">
+                 <a href="{{ url('/mousepad-red') }}" class="border border-white/30 bg-blue-600/10 rounded-xl overflow-hidden group flex flex-col text-center hover:bg-blue-600/20 transition duration-300 aspect-[1/1]">
                     <div class="p-4 sm:p-6 flex-grow flex flex-col justify-center">
                          <h3 class="font-rubik-semibold text-xl sm:text-2xl text-white/90 mb-2">hachiroku mousepad</h3>
                          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/75c420d8560eb2e7069012c42b44c3ad7cfc7700" alt="Коврик hachiroku mousepad" class="max-w-[80%] max-h-[120px] object-contain mx-auto my-2 group-hover:scale-105 transition duration-300" />
@@ -170,7 +173,7 @@
                             2499 ₽
                          </p>
                     </div>
-                </div>
+                </a>
 
             </div>
         </section>

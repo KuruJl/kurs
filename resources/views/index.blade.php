@@ -101,18 +101,18 @@
             <section class="flex flex-col gap-6 sm:gap-12 mb-6 sm:mb-10">
                 <h2 class="font-rubik-medium text-3xl sm:text-4xl md:text-5xl text-pink-200">КАТЕГОРИИ</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                    <a href="" class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
+                    <div href="" class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
                         МЫШКИ
-                    </a>
-                    <a href="" class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
+                    </div>
+                    <div class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
                         КЛАВИАТУРЫ
-                    </a>
-                    <a href="" class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
+                    </div>
+                    <div class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
                         КОВРИКИ
-                    </a>
-                    <a href="" class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
+                    </div>
+                    <div class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
                         НАУШНИКИ
-                    </a>
+                    </div>
                 </div>
             </section>
 
