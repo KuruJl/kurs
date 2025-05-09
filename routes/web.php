@@ -24,7 +24,6 @@ Route::get('/search', [SearchController::class, 'index'])->name('search');
 Route::get('/moonlight', function () {
     $productId = 4; // Замените на фактический ID товара "moonlight" в вашей БД
     $product = \App\Models\Product::find($productId);
-
     // Теперь мы передаем объект $product в представление
     return view('moonlight', ['product' => $product]);
 });

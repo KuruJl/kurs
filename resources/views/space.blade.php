@@ -12,6 +12,7 @@
     <link href="https://fonts.cdnfonts.com/css/norwester" rel="stylesheet">
     <style>
         .font-norwester { font-family: 'Norwester', sans-serif; }
+        body { font-family: 'Rubik', sans-serif; font-weight: 400; } /* Установлен базовый шрифт для body */
         .font-rubik-light { font-family: 'Rubik', sans-serif; font-weight: 300; }
         .font-rubik-regular { font-family: 'Rubik', sans-serif; font-weight: 400; }
         .font-rubik-medium { font-family: 'Rubik', sans-serif; font-weight: 500; }
@@ -20,183 +21,218 @@
         .text-pink-200 { color: #fbcfe8; }
         .border-white { border-color: white; }
         .bg-blue-600 { background-color: rgba(37, 99, 235, 0.2); }
+
+        /* Стили для счетчика количества */
+        .quantity-selector {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 0.375rem;
+            overflow: hidden;
+            height: 42px;
+        }
+
+        .quantity-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+
+        .quantity-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .quantity-input {
+            width: 50px;
+            height: 100%;
+            text-align: center;
+            border: none;
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            -moz-appearance: textfield;
+            padding: 0;
+        }
+
+        .quantity-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+        }
+
+        .quantity-input::-webkit-outer-spin-button,
+        .quantity-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        label[for="quantity"] {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+            margin-right: 0.5rem;
+        }
     </style>
 </head>
-<body class="bg-darkBlue min-h-screen w-full">
-    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
-        <!-- Header Section -->
-        <nav class="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 sm:h-16">
-        <a  href="{{ url(path: '/') }}" class="font-norwester text-4xl sm:text-5xl md:text-6xl text-pink-200">hachiroku</a>
-        <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-11 w-full sm:w-auto">
-        <ul class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-11 text-lg sm:text-xl md:text-2xl text-white">
-                        <li><a href="{{ url('/catalog') }}" class="font-rubik-light hover:opacity-80 transition">каталог</a></li>
-                        <li><a href="{{ url('/support') }}" class="font-rubik-light hover:opacity-80 transition">поддержка</a></li>
-                        <li><a href="{{ url('/cart') }}" class="font-rubik-light hover:opacity-80 transition">корзина</a></li>
-
-                        <li><a href="{{ url('/profile') }}" class="font-rubik-light hover:opacity-80 transition">профиль</a></li>
-                        @auth
-                        <li><form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <button type="submit" class="font-rubik-light hover:opacity-80 transition hover:text-red-600">Выйти</button>
-                            </form>
-                        </li>
-                        @else
-                        <li>
+<body class="bg-blue text-white/80 min-h-screen w-full font-rubik-regular"> <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
+        <header class="flex flex-wrap justify-between items-center gap-4 mb-8 sm:mb-12"> <a href="{{ url(path: '/') }}" class="font-norwester text-4xl sm:text-5xl md:text-6xl text-pink-200">hachiroku</a>
+            <nav class="flex items-center gap-4 sm:gap-6 md:gap-11"> <ul class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-11 text-lg sm:text-xl md:text-2xl text-white">
+                    <li><a href="{{ url('/catalog') }}" class="font-rubik-light hover:opacity-80 transition">каталог</a></li>
+                    <li><a href="{{ url('/support') }}" class="font-rubik-light hover:opacity-80 transition">поддержка</a></li>
+                    <li><a href="{{ url('/cart') }}" class="font-rubik-light hover:opacity-80 transition">корзина</a></li>
+                    <li><a href="{{ url('/profile') }}" class="font-rubik-light hover:opacity-80 transition">профиль</a></li>
+                    @auth
+                    <li><form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="font-rubik-light hover:opacity-80 transition hover:text-red-600">Выйти</button>
+                        </form>
+                    </li>
+                    @else
+                    <li>
                         <a href="{{ route('login') }}" class="font-rubik-light hover:opacity-80 transition">Вход</a>
-                        </li>
-                        <li>
+                    </li>
+                    <li>
                         <a href="{{ route('register') }}" class="font-rubik-light hover:opacity-80 transition">Регистрация</a>
-
-                        </li>
-                        @endauth
-                    </ul>
-                    
-                </div>
+                    </li>
+                    @endauth
+                </ul>
             </nav>
+        </header>
 
-
-        <!-- Main Product Section -->
-        <main class="flex gap-8 sm:gap-10 md:gap-16 mt-8 sm:mt-12 lg:flex-col">
-            <section class="flex flex-col lg:flex-row gap-8 w-full">
-                <!-- Product Images -->
-                <section class="w-full lg:w-1/2 max-w-[500px]">
-                    <div class="border-2 border-dashed border-white w-full h-[400px] flex items-center justify-center">
-                        <img src="https://i.ibb.co/M5NpRjs2/image-9.png" 
-                             alt="hachiroku moonlight keyboard" 
+        <main class="flex flex-col lg:flex-row gap-8 sm:gap-10 md:gap-16 mt-8 sm:mt-12">
+             <section class="w-full lg:w-auto lg:max-w-xl flex-shrink-0"> <div class="border border-white/30 w-full aspect-[4/3] flex items-center justify-center rounded-lg overflow-hidden"> <img src="https://i.ibb.co/M5NpRjs2/image-9.png"
+                         alt="hachiroku moonlight keyboard"
+                         class="max-w-full max-h-full object-contain" />
+                </div>
+                <div class="flex gap-3 mt-4"> <div class="border border-white/30 flex-1 aspect-square flex items-center justify-center rounded overflow-hidden cursor-pointer hover:border-white/70 transition"> <img src="https://i.ibb.co/QjKc7B5H/image-9.png"
+                             alt="hachiroku moonlight thumbnail 1"
                              class="max-w-full max-h-full object-contain" />
                     </div>
-                    <div class="flex gap-2 mt-3 sm:mt-6">
-                        <div class="border-2 border-dashed border-white w-40 h-40 flex items-center justify-center">
-                            <img src="https://i.ibb.co/QjKc7B5H/image-9.png" 
-                                 alt="hachiroku moonlight thumbnail 1" 
-                                 class="max-w-full max-h-full object-contain" />
-                        </div>
-                        <div class="border-2 border-dashed border-white w-40 h-40 flex items-center justify-center">
-                            <img src="https://i.ibb.co/Z6fGSCJ9/image-10.png" 
-                                 alt="hachiroku moonlight thumbnail 2" 
-                                 class="max-w-full max-h-full object-contain" />
-                        </div>
-                        <div class="border-2 border-dashed border-white w-40 h-40 flex items-center justify-center">
-                            <img src="https://i.ibb.co/MxRVN8WL/image-11.png" 
-                                 alt="hachiroku moonlight thumbnail 3" 
-                                 class="max-w-full max-h-full object-contain" />
-                        </div>
+                    <div class="border border-white/30 flex-1 aspect-square flex items-center justify-center rounded overflow-hidden cursor-pointer hover:border-white/70 transition"> <img src="https://i.ibb.co/Z6fGSCJ9/image-10.png"
+                             alt="hachiroku moonlight thumbnail 2"
+                             class="max-w-full max-h-full object-contain" />
                     </div>
-                </section>
+                    <div class="border border-white/30 flex-1 aspect-square flex items-center justify-center rounded overflow-hidden cursor-pointer hover:border-white/70 transition"> <img src="https://i.ibb.co/MxRVN8WL/image-11.png"
+                             alt="hachiroku moonlight thumbnail 3"
+                             class="max-w-full max-h-full object-contain" />
+                    </div>
+                </div>
+            </section>
 
-                <!-- Product Details -->
-                <section class="w-full lg:w-1/2">
-                    <h1 class="font-rubik-semibold text-4xl sm:text-5xl md:text-6xl text-white/80">hachiroku space</h1>
-                    
-                    <div class="mt-6 sm:mt-8">
-                        <h2 class="font-rubik-medium text-xl sm:text-2xl text-white/80">Описание:</h2>
-                        <p class="font-rubik-light text-lg sm:text-xl text-white mt-2 leading-relaxed">
-                        Флагманская клавиатура премиального уровня, в которой продумана каждая мелкая деталь, чтобы игровые сессии даже самых требовательных пользователей проходили с максимальным комфортом
-                        </p>
-                    </div>
-                    
-                    <div class="mt-8 sm:mt-10">
-                        <h2 class="font-rubik-medium text-xl sm:text-2xl text-white/80">Характеристики:</h2>
-                        <p class="font-rubik-light text-lg sm:text-xl text-white mt-2 leading-relaxed">
-                            Тип подключения: беспроводная<br />
-                            Формат: 98%<br />
-                            Размеры: 392х141х44мм<br />
-                            Вес: 850г<br />
-                            Наличие Hot-Swap: да<br />
-                        </p>
-                    </div>
-                    
-                    <form action="{{ route('cart.add', ['product' => $product->id ?? 1]) }}" method="POST" class="mt-10 sm:mt-12">
-                @csrf
-                            <div class="flex flex-wrap items-center gap-6 sm:gap-8">
-                                <div class="font-rubik-semibold text-4xl sm:text-5xl text-white">9999 ₽</div>
-                                <div class="flex items-center">
-                                    <label for="quantity" class="font-rubik-light text-white/80 mr-2 whitespace-nowrap">Количество:</label>
-                                    <input type="number" id="quantity" name="quantity" value="1" min="1" aria-label="Количество товара" class="bg-white/10 border border-white/30 text-white p-2 rounded-md w-16 text-center">
+            <section class="flex-1"> <h1 class="font-rubik-semibold text-4xl sm:text-5xl md:text-6xl text-white">hachiroku space</h1> <div class="mt-6 sm:mt-8">
+                    <h2 class="font-rubik-medium text-xl sm:text-2xl text-white/90">Описание</h2> <p class="font-rubik-light text-lg sm:text-xl text-white/80 mt-2 leading-relaxed"> Флагманская клавиатура премиального уровня, в которой продумана каждая мелкая деталь, чтобы игровые сессии даже самых требовательных пользователей проходили с максимальным комфортом
+                    </p>
+                </div>
+
+                <div class="mt-8 sm:mt-10">
+                    <h2 class="font-rubik-medium text-xl sm:text-2xl text-white/90">Характеристики</h2> <ul class="font-rubik-light text-lg sm:text-xl text-white/80 mt-2 leading-relaxed list-disc list-inside"> <li>Тип подключения: беспроводная</li>
+                        <li>Формат: 98%</li>
+                        <li>Размеры: 392х141х44мм</li>
+                        <li>Вес: 850г</li>
+                        <li>Наличие Hot-Swap: да</li>
+                    </ul>
+                </div>
+
+                <form action="{{ route('cart.add', ['product' => $product->id ?? 1]) }}" method="POST" class="mt-10 sm:mt-12">
+                        @csrf
+                        <div class="flex flex-wrap items-center gap-6 sm:gap-8">
+                            <div class="font-rubik-semibold text-4xl sm:text-5xl text-white">9999 ₽</div>
+                            <div class="flex items-center">
+                                <label for="quantity" class="font-rubik-light text-white/80 mr-2 whitespace-nowrap">Количество:</label>
+                                <div class="quantity-selector">
+                                    <button type="button" class="quantity-btn minus" onclick="this.nextElementSibling.stepDown()">−</button>
+                                    <input type="number" id="quantity" name="quantity" value="1" min="1" max="100" aria-label="Количество товара" class="quantity-input">
+                                    <button type="button" class="quantity-btn plus" onclick="this.previousElementSibling.stepUp()">+</button>
                                 </div>
-                                <button type="submit" class="bg-blue-600/20 text-white border-2 border-white rounded-md py-3 px-8 sm:py-4 sm:px-10 font-rubik-semibold text-lg sm:text-xl hover:bg-blue-600/30 transition whitespace-nowrap">
-                                    Добавить в корзину
-                                </button>
                             </div>
-                        </form>
-                </section>
+                            <button type="submit" class="bg-blue-600/20 text-white border-2 border-white rounded-md py-3 px-8 sm:py-4 sm:px-10 font-rubik-semibold text-lg sm:text-xl hover:bg-blue-600/30 transition whitespace-nowrap">
+                                Добавить в корзину
+                            </button>
+                        </div>
+                    </form>
             </section>
         </main>
 
-        <!-- Recommended Products -->
         <section class="mt-16 sm:mt-24">
-            <h2 class="font-rubik-medium text-3xl sm:text-4xl md:text-5xl text-pink-200">ТАКЖЕ ПОКУПАЮТ</h2>
-            <div class="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-14">
-                <!-- Product 1 -->
-                <div class="w-full h-72 border-2 border-white/50 bg-blue-600/20 relative flex flex-col items-center rounded-xl hover:bg-blue-600/30 transition">
-                    <h3 class="font-rubik-semibold text-xl sm:text-2xl text-white/80 text-center mt-6 sm:mt-9">hachiroku loud</h3>
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e247a6c7b458889788d38d6139046c37bcc51787" 
-                         alt="hachiroku loud keyboard" 
-                         class="max-w-full max-h-full object-contain mt-auto mb-4 sm:mb-8" />
-                    <div class="absolute bottom-6 sm:bottom-8">
-                        <p class="font-rubik-semibold text-xl sm:text-2xl md:text-3xl font-bold rounded-3xl bg-white/80 h-12 sm:h-[50px] text-black/80 w-full max-w-[220px] flex items-center justify-center">
-                            8999 рублей
+            <h2 class="font-rubik-medium text-3xl sm:text-4xl text-pink-200">ТАКЖЕ ПОКУПАЮТ</h2>
+            <div class="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+
+                <a href="{{ url('moonlight') }}" class="border border-white/30 bg-blue-600/10 rounded-xl overflow-hidden group flex flex-col text-center hover:bg-blue-600/20 transition duration-300 aspect-[1/1]">
+                    <div class="p-4 sm:p-6 flex-grow flex flex-col justify-center">
+                        <h3 class="font-rubik-semibold text-xl sm:text-2xl text-white/90 mb-2">hachiroku loud</h3>
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e247a6c7b458889788d38d6139046c37bcc51787" alt="Клавиатура hachiroku loud" class="max-w-[80%] max-h-[120px] object-contain mx-auto my-2 group-hover:scale-105 transition duration-300" />
+                    </div>
+                    <div class="mt-auto p-4 pt-0">
+                        <p class="font-rubik-semibold text-xl md:text-2xl rounded-full bg-white/80 text-black/80 py-2 px-4 inline-block">
+                            8999 ₽ </p>
+                    </div>
+                </a>
+
+                <a href="{{ url('night') }}" class="border border-white/30 bg-blue-600/10 rounded-xl overflow-hidden group flex flex-col text-center hover:bg-blue-600/20 transition duration-300 aspect-[1/1]">
+                    <div class="p-4 sm:p-6 flex-grow flex flex-col justify-center">
+                        <h3 class="font-rubik-semibold text-xl sm:text-2xl text-white/90 mb-2">hachiroku night</h3>
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5911c5f235980b5f45d6a1fdedac84f3ae49016c" alt="Клавиатура hachiroku night" class="max-w-[80%] max-h-[120px] object-contain mx-auto my-2 group-hover:scale-105 transition duration-300" />
+                    </div>
+                    <div class="mt-auto p-4 pt-0">
+                        <p class="font-rubik-semibold text-xl md:text-2xl rounded-full bg-white/80 text-black/80 py-2 px-4 inline-block">
+                            6990 ₽
                         </p>
                     </div>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="w-full h-72 border-2 border-white/50 bg-blue-600/20 relative flex flex-col items-center rounded-xl hover:bg-blue-600/30 transition">
-                    <h3 class="font-rubik-semibold text-xl sm:text-2xl text-white/80 text-center mt-6 sm:mt-9">hachiroku night</h3>
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5911c5f235980b5f45d6a1fdedac84f3ae49016c" 
-                         alt="hachiroku night keyboard" 
-                         class="max-w-full max-h-full object-contain mt-auto mb-4 sm:mb-8" />
-                    <div class="absolute bottom-6 sm:bottom-8">
-                        <p class="font-rubik-semibold text-xl sm:text-2xl md:text-3xl font-bold rounded-3xl bg-white/80 h-12 sm:h-[50px] text-black/80 w-full max-w-[220px] flex items-center justify-center">
-                            6990 рублей
+                </a>
+
+                <a href="{{ url('superone') }}" class="border border-white/30 bg-blue-600/10 rounded-xl overflow-hidden group flex flex-col text-center hover:bg-blue-600/20 transition duration-300 aspect-[1/1]">
+                    <div class="p-4 sm:p-6 flex-grow flex flex-col justify-center">
+                        <h3 class="font-rubik-semibold text-xl sm:text-2xl text-white/90 mb-2">hachiroku superone</h3>
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f1e30e2cc847e352df3581a299ba5dc39b996f14" alt="Клавиатура hachiroku superone" class="max-w-[80%] max-h-[120px] object-contain mx-auto my-2 group-hover:scale-105 transition duration-300" />
+                    </div>
+                    <div class="mt-auto p-4 pt-0">
+                        <p class="font-rubik-semibold text-xl md:text-2xl rounded-full bg-white/80 text-black/80 py-2 px-4 inline-block">
+                            7499 ₽
                         </p>
                     </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="w-full h-72 border-2 border-white/50 bg-blue-600/20 relative flex flex-col items-center rounded-xl hover:bg-blue-600/30 transition">
-                    <h3 class="font-rubik-semibold text-xl sm:text-2xl text-white/80 text-center mt-6 sm:mt-9">hachiroku superone</h3>
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f1e30e2cc847e352df3581a299ba5dc39b996f14" 
-                         alt="hachiroku superone keyboard" 
-                         class="max-w-full max-h-full object-contain mt-auto mb-4 sm:mb-8" />
-                    <div class="absolute bottom-6 sm:bottom-8">
-                        <p class="font-rubik-semibold text-xl sm:text-2xl md:text-3xl font-bold rounded-3xl bg-white/80 h-12 sm:h-[50px] text-black/80 w-full max-w-[220px] flex items-center justify-center">
-                            7499 рублей
+                </a>
+
+                <a href="{{ url('mousepad-red') }}" class="border border-white/30 bg-blue-600/10 rounded-xl overflow-hidden group flex flex-col text-center hover:bg-blue-600/20 transition duration-300 aspect-[1/1]">
+                    <div class="p-4 sm:p-6 flex-grow flex flex-col justify-center">
+                        <h3 class="font-rubik-semibold text-xl sm:text-2xl text-white/90 mb-2">hachiroku mousepad</h3>
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/75c420d8560eb2e7069012c42b44c3ad7cfc7700" alt="Коврик hachiroku mousepad" class="max-w-[80%] max-h-[120px] object-contain mx-auto my-2 group-hover:scale-105 transition duration-300" />
+                    </div>
+                    <div class="mt-auto p-4 pt-0">
+                        <p class="font-rubik-semibold text-xl md:text-2xl rounded-full bg-white/80 text-black/80 py-2 px-4 inline-block">
+                            2499 ₽
                         </p>
                     </div>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="w-full h-72 border-2 border-white/50 bg-blue-600/20 relative flex flex-col items-center rounded-xl hover:bg-blue-600/30 transition">
-                    <h3 class="font-rubik-semibold text-xl sm:text-2xl text-white/80 text-center mt-6 sm:mt-9">hachiroku mousepad</h3>
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/75c420d8560eb2e7069012c42b44c3ad7cfc7700" 
-                         alt="hachiroku mousepad" 
-                         class="max-w-full max-h-full object-contain mt-auto mb-4 sm:mb-8" />
-                    <div class="absolute bottom-6 sm:bottom-8">
-                        <p class="font-rubik-semibold text-xl sm:text-2xl md:text-3xl font-bold rounded-3xl bg-white/80 h-12 sm:h-[50px] text-black/80 w-full max-w-[220px] flex items-center justify-center">
-                            2499 рублей
-                        </p>
-                    </div>
-                </div>
+                </a>
+
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 sm:gap-8 pt-8 sm:pt-16">
-            <h2 class="font-norwester text-3xl sm:text-4xl md:text-5xl text-pink-200">hachiroku</h2>
-            <div class="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-11 w-full sm:w-auto">
-                <nav class="flex flex-col gap-3 sm:gap-5 text-lg sm:text-xl md:text-2xl text-white">
-                    <a href="{{ url('/catalog') }}" class="font-rubik-light hover:opacity-80 transition">каталог</a>
-                    <a href="{{ url('/support') }}" class="font-rubik-light hover:opacity-80 transition">поддержка</a>
-                    <a href="login" class="font-rubik-light hover:opacity-80 transition">вход | регистрация</a>
+        <footer class="border-t border-white/20 mt-16 sm:mt-24 pt-8 sm:pt-12 flex flex-wrap justify-between items-start gap-8">
+            <div class="flex-shrink-0">
+                <a href="{{ url('/') }}" class="font-norwester text-3xl sm:text-4xl md:text-5xl text-pink-200 hover:opacity-90 transition">hachiroku</a>
+            </div>
+            <div class="flex flex-col sm:flex-row flex-wrap justify-end gap-8 sm:gap-12 md:gap-16 text-lg sm:text-xl text-white">
+                <nav class="flex flex-col gap-3 sm:gap-4">
+                    <h3 class="font-rubik-medium text-white/90 mb-1">Навигация</h3> <a href="{{ url('/catalog') }}" class="font-rubik-light hover:opacity-80 transition">Каталог</a>
+                    <a href="{{ url('/support') }}" class="font-rubik-light hover:opacity-80 transition">Поддержка</a>
+                    <a href="{{ route('login') }}" class="font-rubik-light hover:opacity-80 transition">Вход | Регистрация</a>
                 </nav>
-                <div class="flex flex-col gap-3 sm:gap-5 text-lg sm:text-xl md:text-2xl text-white">
-                    <a href="https://vk.com/hachiroku" class="font-rubik-light hover:opacity-80 transition">наш VK</a>
-                    <a href="https://t.me/hachiroku" class="font-rubik-light hover:opacity-80 transition">наш телеграм</a>
-                    <a href="mailto:hachirokustore@gmail.com" class="font-rubik-light hover:opacity-80 transition">hachirokustore@gmail.com</a>
+                <div class="flex flex-col gap-3 sm:gap-4">
+                    <h3 class="font-rubik-medium text-white/90 mb-1">Связь</h3> <a href="https://vk.com/hachiroku" target="_blank" rel="noopener noreferrer" class="font-rubik-light hover:opacity-80 transition">Наш VK</a> <a href="https://t.me/hachiroku" target="_blank" rel="noopener noreferrer" class="font-rubik-light hover:opacity-80 transition">Наш Telegram</a> <a href="mailto:hachirokustore@gmail.com" class="font-rubik-light hover:opacity-80 transition">hachirokustore@gmail.com</a>
                 </div>
             </div>
         </footer>
+
     </div>
 </body>
+
 </html>

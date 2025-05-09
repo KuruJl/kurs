@@ -10,31 +10,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/norwester" rel="stylesheet">
     <title>Корзина - hachiroku</title>
+    <style>
+        .font-norwester { font-family: 'Norwester', sans-serif; }
+        .font-rubik-light { font-family: 'Rubik', sans-serif; font-weight: 300; }
+        .font-rubik-regular { font-family: 'Rubik', sans-serif; font-weight: 400; }
+        .font-rubik-medium { font-family: 'Rubik', sans-serif; font-weight: 500; }
+        .font-rubik-semibold { font-family: 'Rubik', sans-serif; font-weight: 600; }
+    </style>
 </head>
 <body class="bg-darkBlue">
 <div class="flex flex-col items-center w-full min-h-screen">
     <div class="flex flex-col gap-8 py-14 w-full px-4 sm:px-6 lg:px-8 max-w-[1320px]">
-        <nav class="flex flex-col sm:flex-row justify-between items-center gap-5 sm:gap-0 mb-10">
-            <a href="{{ url(path: '/') }}" class="font-norwester text-4xl sm:text-5xl md:text-6xl text-pink-200">hachiroku</a>
-            <div class="flex flex-col sm:flex-row gap-4 sm:gap-11 items-center">
-                <ul class="flex flex-col sm:flex-row gap-4 sm:gap-11 items-center text-lg md:text-xl lg:text-2xl text-white">
-                    <li><a href="{{ url('/catalog') }}" class="font-rubik-light hover:opacity-80 transition">каталог</a></li>
-                    <li><a href="{{ url('/support') }}" class="font-rubik-light hover:opacity-80 transition">поддержка</a></li>
-                    <li><a href="{{ route('cart') }}" class="font-rubik-light hover:opacity-80 transition">корзина</a></li>
-                </ul>
-                <div class="text-lg md:text-xl lg:text-2xl text-white">
-                    @auth
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <button type="submit" class="font-rubik-light hover:opacity-80 transition hover:text-red-600">Выйти</button>
-                        </form>
-                    @else
-                        <a style="font-family:Rubik, serif; font-weight:300" href="{{ route('login') }}">вход</a> |
-                        <a style="font-family:Rubik, serif; font-weight:300" href="{{ route('register') }}">регистрация</a>
-                    @endauth
+    <nav class="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 sm:h-16">
+                <a  href="{{ url(path: '/') }}" class="font-norwester text-4xl sm:text-5xl md:text-6xl text-pink-200">hachiroku</a>
+                <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-11 w-full sm:w-auto">
+                    <ul class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-11 text-lg sm:text-xl md:text-2xl text-white">
+                        <li><a href="{{ url('/catalog') }}" class="font-rubik-light hover:opacity-80 transition">каталог</a></li>
+                        <li><a href="{{ url('/support') }}" class="font-rubik-light hover:opacity-80 transition">поддержка</a></li>
+                        <li><a href="{{ url('/cart') }}" class="font-rubik-light hover:opacity-80 transition">корзина</a></li>
+                        <li><a href="{{ url('/profilee') }}" class="font-rubik-light hover:opacity-80 transition">профиль</a></li>
+                        @auth
+                        <li><form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="font-rubik-light hover:opacity-80 transition hover:text-red-600">Выйти</button>
+                            </form>
+                        </li>
+                        @else
+                        <li>
+                        <a href="{{ route('login') }}" class="font-rubik-light hover:opacity-80 transition">Вход</a>
+                        </li>
+                        <li>
+                        <a href="{{ route('register') }}" class="font-rubik-light hover:opacity-80 transition">Регистрация</a>
+
+                        </li>
+                        @endauth
+                    </ul>
+                    
                 </div>
-            </div>
-        </nav>
+            </nav>
 
         <h2 style="font-family:'Rubik', sans-serif;font-weight:500" class="text-4xl md:text-5xl lg:text-xxl text-pink-200 text-center">КОРЗИНА</h2>
 
