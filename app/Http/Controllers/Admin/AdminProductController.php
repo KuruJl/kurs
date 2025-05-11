@@ -33,40 +33,42 @@ class AdminProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-   
-
-public function store(Request $request): RedirectResponse
-{
-    $request->validate([
-        'category_id' => 'required|exists:categories,id',
-        'name' => 'required|string|max:255',
-        'description' => 'nullable|string',
-        'price' => 'required|numeric|min:0',
-        'quantity' => 'required|integer|min:0',
-        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        'in_stock' => 'nullable|boolean',
-    ]);
-
-    $product = new Product();
-    $product->category_id = $request->input('category_id');
-    $product->name = $request->input('name');
-    $product->slug = Str::slug($request->input('name')); // Генерируем slug из названия
-    $product->description = $request->input('description');
-    $product->price = $request->input('price');
-    $product->quantity = $request->input('quantity');
-    $product->in_stock = $request->has('in_stock');
-
-    if ($request->hasFile('image')) {
-        $image = $request->file('image');
-        $filename = time() . '.' . $image->getClientOriginalExtension();
-        $path = $image->storeAs('public/products', $filename);
-        $product->image = 'products/' . $filename;
+    protected function generateUniqueSlug($name)
+    {
+        $slug = Str::slug($name);
+        $count = Product::where('slug', $slug)->count();
+        if ($count > 0) {
+            $slug = $slug . '-' . ($count + 1);
+        }
+        return $slug;
     }
 
-    $product->save();
-
-    return redirect()->route('admin.products.index')->with('success', 'Товар успешно добавлен!');
-}
+     public function store(Request $request): RedirectResponse
+     {
+         $request->validate([
+             'category_id' => 'required|exists:categories,id',
+             'name' => 'required|string|max:255',
+             'description' => 'nullable|string',
+             'price' => 'required|numeric|min:0',
+             'quantity' => 'required|integer|min:0',
+             'image' => 'nullable|url|max:2048', // Валидация для URL
+             'in_stock' => 'nullable|boolean',
+         ]);
+     
+         $product = new Product();
+         $product->category_id = $request->input('category_id');
+         $product->name = $request->input('name');
+         $product->slug = Str::slug($request->input('name'));
+         $product->description = $request->input('description');
+         $product->price = $request->input('price');
+         $product->quantity = $request->input('quantity');
+         $product->in_stock = $request->has('in_stock') ? 1 : 0;
+         $product->image = $request->input('image'); // Сохраняем URL
+     
+         $product->save();
+     
+         return redirect()->route('admin.products.index')->with('success', 'Товар успешно добавлен!');
+     }
 
     /**
      * Display the specified resource.
@@ -89,19 +91,38 @@ public function store(Request $request): RedirectResponse
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product): RedirectResponse
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'price' => 'required|numeric|min:0',
-            'quantity' => 'required|integer|min:0',
-        ]);
 
-        $product->update($request->all());
+     public function update(Request $request, $id)
+     {
+         $product = Product::findOrFail($id);
+     
+         $request->validate([
+             'category_id' => 'required|exists:categories,id',
+             'name' => 'required|string|max:255',
+             'description' => 'nullable|string',
+             'price' => 'required|numeric|min:0',
+             'quantity' => 'required|integer|min:0',
+             'image_url' => 'nullable|url|max:2048', // Валидация для URL
+             'in_stock' => 'nullable|boolean',
+         ]);
 
+         $product->category_id = $request->input('category_id');
+         $product->name = $request->input('name');
+         $product->slug = Str::slug($request->input('name'));
+         $product->description = $request->input('description');
+         $product->price = $request->input('price');
+         $product->quantity = $request->input('quantity');
+         $product->in_stock = $request->has('in_stock') ? 1 : 0;
+     
+         // Обработка URL изображения
+         if ($request->filled('image_url')) {
+             $product->image = $request->input('image_url');
+         }
+     
+         $product->save();
+         
         return redirect()->route('admin.products.index')->with('success', 'Товар успешно обновлен!');
-    }
+     }
 
     /**
      * Remove the specified resource from storage.

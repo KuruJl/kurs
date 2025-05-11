@@ -68,28 +68,35 @@
             </div>
 
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="image">
-                    Изображение
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="image_url">
+                    URL изображения
                 </label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                       id="image" name="image" type="file">
+                       id="image_url" name="image_url" type="url" value="{{ old('image', $product->image) }}">
                 @if($product->image)
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="Текущее изображение" class="mt-2 max-h-32">
+                    <img src="{{ $product->image }}" alt="Текущее изображение" class="mt-2 max-h-32">
                 @endif
-                @error('image')
+                @error('image_url')
                     <p class="text-red-500 text-xs italic">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="in_stock">
-                    В наличии
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="slug">
+                    Slug (URL)
                 </label>
-                <input type="checkbox" id="in_stock" name="in_stock" class="form-checkbox h-5 w-5 text-green-500 focus:ring-green-500 border-gray-300 rounded" {{ old('in_stock', $product->in_stock) ? 'checked' : '' }}>
-                <span class="ml-2 text-gray-700 text-sm">Отметьте, если товар есть в наличии</span>
-                @error('in_stock')
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                       id="slug" name="slug" type="text" value="{{ old('slug', $product->slug) }}">
+                <p class="text-gray-500 text-xs italic">URL товара.</p>
+                @error('slug')
                     <p class="text-red-500 text-xs italic">{{ $message }}</p>
                 @enderror
+            </div>
+
+            <div class="mb-4">
+                <input type="checkbox" id="in_stock_checkbox" name="in_stock_checkbox" class="form-checkbox h-5 w-5 text-green-500 focus:ring-green-500 border-gray-300 rounded" {{ old('in_stock', $product->in_stock) == 1 ? 'checked' : '' }}>
+                <input type="hidden" name="in_stock" value="{{ old('in_stock', $product->in_stock) == 1 ? 1 : 0 }}">
+                <label class="ml-2 text-gray-700 text-sm" for="in_stock_checkbox">В наличии</label>
             </div>
 
             <div class="flex items-center justify-between">
@@ -103,4 +110,17 @@
             </div>
         </form>
     </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const checkbox = document.getElementById('in_stock_checkbox');
+        const hiddenInput = document.querySelector('input[name="in_stock"]');
+
+        checkbox.addEventListener('change', function() {
+            hiddenInput.value = this.checked ? 1 : 0;
+        });
+
+        // Устанавливаем начальное значение скрытого поля при загрузке страницы
+        hiddenInput.value = checkbox.checked ? 1 : 0;
+    });
+</script>
 @endsection
