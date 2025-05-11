@@ -133,18 +133,7 @@
                                 </div>
                             </div>
                             
-                            <!-- Адрес -->
-                            <div class="grid gap-3 sm:gap-5 grid-cols-1 sm:grid-cols-[minmax(200px,300px)_1fr] items-center">
-                                <label for="address" class="text-lg sm:text-xl md:text-2xl font-light text-white">Адрес:</label>
-                                <div>
-                                    <input type="text" id="address" name="address" value="{{ auth()->user()->address ?? 'г. Иркутск' }}" 
-                                           class="input-field font-rubik-semibold text-lg sm:text-xl md:text-2xl">
-                                    @error('address')
-                                        <p class="text-red-400 mt-1">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                            </div>
-                        </div>
+                           
                         
                         <div class="flex flex-col sm:flex-row gap-4 mt-10">
                             <button type="submit" class="bg-blue-600/20 text-white border-2 border-white rounded-md py-3 px-8 sm:py-4 sm:px-10 font-rubik-semibold text-lg sm:text-xl hover:bg-blue-600/30 transition whitespace-nowrap">

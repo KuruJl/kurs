@@ -14,6 +14,7 @@
             'description',
             'image',
             'in_stock',
+            'quantity',
             'slug',
         ];
 

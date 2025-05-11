@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Hash; // Правильный импорт для Hash
+
 
 class ProfileController extends Controller
 {
@@ -24,17 +26,40 @@ class ProfileController extends Controller
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(Request $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        $user = $request->user();
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        $rules = [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $user->id],
+            'phone' => ['nullable', 'string', 'max:20'],
+        ];
+
+        // Добавляем правила для смены пароля, только если новый пароль был введен
+        if ($request->filled('password')) {
+            $rules['current_password'] = ['required', 'current_password']; // Проверка текущего пароля
+            $rules['password'] = ['required', 'confirmed', 'max:20'];
         }
 
-        $request->user()->save();
+        $validator = Validator::make($request->all(), $rules);
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
+
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->phone = $request->input('phone');
+
+        // Обновляем пароль, только если он был введен и валиден
+        if ($request->filled('password')) {
+            $user->password = Hash::make($request->input('password'));
+        }
+
+        $user->save();
+
+        return Redirect::route('profile.edit')->with('success', 'Данные изменены');
     }
 
     /**
