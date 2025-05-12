@@ -101,16 +101,17 @@
             <section class="flex flex-col gap-6 sm:gap-12 mb-6 sm:mb-10">
                 <h2 class="font-rubik-medium text-3xl sm:text-4xl md:text-5xl text-pink-200">КАТЕГОРИИ</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                    <div href="" class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
+                    
+                    <div class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
                         МЫШКИ
                     </div>
-                    <div class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
+                    <div  class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
                         КЛАВИАТУРЫ
                     </div>
-                    <div class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
+                    <div  class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
                         КОВРИКИ
                     </div>
-                    <div class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
+                    <div  class="font-rubik-medium text-base sm:text-lg text-white border-2 border-dashed border-white hover:border-solid hover:bg-white/10 transition h-16 sm:h-[84px] flex items-center justify-center rounded-lg">
                         НАУШНИКИ
                     </div>
                 </div>
@@ -135,24 +136,23 @@
                 </div>
             </section>
 
-            <div class="border-t-2 border-white/20 my-8 sm:my-12"></div>
 
             <!-- Футер -->
-            <footer class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 sm:gap-8 pt-8 sm:pt-16">
-                <h2 class="font-norwester text-3xl sm:text-4xl md:text-5xl text-pink-200">hachiroku</h2>
-                <div class="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-11 w-full sm:w-auto">
-                    <nav class="flex flex-col gap-3 sm:gap-5 text-lg sm:text-xl md:text-2xl text-white">
-                        <a href="{{ url('/catalog') }}" class="font-rubik-light hover:opacity-80 transition">каталог</a>
-                        <a href="{{ url('/support') }}" class="font-rubik-light hover:opacity-80 transition">поддержка</a>
-                        <a href="login" class="font-rubik-light hover:opacity-80 transition">вход | регистрация</a>
-                    </nav>
-                    <div class="flex flex-col gap-3 sm:gap-5 text-lg sm:text-xl md:text-2xl text-white">
-                        <a href="https://vk.com/hachiroku" class="font-rubik-light hover:opacity-80 transition">наш VK</a>
-                        <a href="https://t.me/hachiroku" class="font-rubik-light hover:opacity-80 transition">наш телеграм</a>
-                        <a href="mailto:hachirokustore@gmail.com" class="font-rubik-light hover:opacity-80 transition">hachirokustore@gmail.com</a>
-                    </div>
+            <footer class="border-t border-white/20 mt-16 sm:mt-24 pt-8 sm:pt-12 flex flex-wrap justify-between items-start gap-8">
+            <div class="flex-shrink-0">
+                <a href="{{ url('/') }}" class="font-norwester text-3xl sm:text-4xl md:text-5xl text-pink-200 hover:opacity-90 transition">hachiroku</a>
+            </div>
+            <div class="flex flex-col sm:flex-row flex-wrap justify-end gap-8 sm:gap-12 md:gap-16 text-lg sm:text-xl text-white">
+                <nav class="flex flex-col gap-3 sm:gap-4">
+                    <h3 class="font-rubik-medium text-white/90 mb-1">Навигация</h3> <a href="{{ url('/catalog') }}" class="font-rubik-light hover:opacity-80 transition">Каталог</a>
+                    <a href="{{ url('/support') }}" class="font-rubik-light hover:opacity-80 transition">Поддержка</a>
+                    <a href="{{ route('login') }}" class="font-rubik-light hover:opacity-80 transition">Вход | Регистрация</a>
+                </nav>
+                <div class="flex flex-col gap-3 sm:gap-4">
+                    <h3 class="font-rubik-medium text-white/90 mb-1">Связь</h3> <a href="https://vk.com/hachiroku" target="_blank" rel="noopener noreferrer" class="font-rubik-light hover:opacity-80 transition">Наш VK</a> <a href="https://t.me/hachiroku" target="_blank" rel="noopener noreferrer" class="font-rubik-light hover:opacity-80 transition">Наш Telegram</a> <a href="mailto:hachirokustore@gmail.com" class="font-rubik-light hover:opacity-80 transition">hachirokustore@gmail.com</a>
                 </div>
-            </footer>
+            </div>
+        </footer>
         </div>
     </div>
 </body>

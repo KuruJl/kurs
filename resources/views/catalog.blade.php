@@ -7,6 +7,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/norwester" rel="stylesheet">
+  <style>
+        .font-norwester { font-family: 'Norwester', sans-serif; }
+        .font-rubik-light { font-family: 'Rubik', sans-serif; font-weight: 300; }
+        .font-rubik-regular { font-family: 'Rubik', sans-serif; font-weight: 400; }
+        .font-rubik-medium { font-family: 'Rubik', sans-serif; font-weight: 500; }
+        .font-rubik-semibold { font-family: 'Rubik', sans-serif; font-weight: 600; }
+    </style>
 </head>
 
 <div class="flex flex-col items-center w-full bg-darkBlue min-h-screen">

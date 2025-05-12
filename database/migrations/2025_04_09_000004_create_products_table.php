@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('image');
             $table->boolean('in_stock')->default(true);
             $table->string('slug')->unique();
+            $table->integer('quantity')->default(0)->unsigned();
             $table->timestamps();
         });
     }
