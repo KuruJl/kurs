@@ -103,7 +103,7 @@ class AdminProductController extends Controller
              'price' => 'required|numeric|min:0',
              'quantity' => 'required|integer|min:0',
              'image_url' => 'nullable|url|max:2048', // Валидация для URL
-             'in_stock' => 'nullable|boolean',
+             'in_stock' => 'nullable',
          ]);
 
          $product->category_id = $request->input('category_id');

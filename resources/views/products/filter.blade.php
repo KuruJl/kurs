@@ -17,11 +17,41 @@
         .font-rubik-semibold { font-family: 'Rubik', sans-serif; font-weight: 600; }
     </style>
 </head>
+
 <body class="font-sans antialiased ">
+    
     <div class="min-h-screen bg-blue">
 
+    <header class="flex flex-wrap justify-between items-center gap-4 mb-8 sm:mb-12">
+        <a  href="{{ url(path: '/') }}" class="font-norwester text-4xl sm:text-5xl md:text-6xl text-pink-200">hachiroku</a>
+        <nav class="flex items-center gap-4 sm:gap-6 md:gap-11">
+        <ul class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-11 text-lg sm:text-xl md:text-2xl text-white">
+                            <li><a href="{{ url('/catalog') }}" class="font-rubik-light hover:opacity-80 transition">каталог</a></li>
+                            <li><a href="{{ url('/support') }}" class="font-rubik-light hover:opacity-80 transition">поддержка</a></li>
+                            <li><a href="{{ url('/cart') }}" class="font-rubik-light hover:opacity-80 transition">корзина</a></li>
 
+                            <li><a href="{{ url('/profile') }}" class="font-rubik-light hover:opacity-80 transition">профиль</a></li>
+                            @auth
+                            <li><form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <button type="submit" class="font-rubik-light hover:opacity-80 transition hover:text-red-600">Выйти</button>
+                                    </form>
+                            </li>
+                            @else
+                            <li>
+                            <a href="{{ route('login') }}" class="font-rubik-light hover:opacity-80 transition">Вход</a>
+                            </li>
+                            <li>
+                            <a href="{{ route('register') }}" class="font-rubik-light hover:opacity-80 transition">Регистрация</a>
+
+                            </li>
+                            @endauth
+                        </ul>
+
+        </nav>
+    </header>
         <main>
+
             {{-- Здесь будет ваш контент страницы фильтров --}}
             <div class="container mx-auto py-8 sm:py-14">
                 <h1 class="font-norwester text-2xl sm:text-4xl md:text-5xl text-pink-200 mb-6">Фильтр товаров</h1>
